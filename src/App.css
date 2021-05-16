@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+/*** FORM CSS ***/
+
+form {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0.15rem solid #000;
+  width: 50%;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  display: block;
+  width: 50%;
+}
+
+input[type="button"],
+input[type="submit"] {
+  margin: 1rem auto;
+}
+
+form div {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.15rem solid #000;
+}
+
+form div input {
+  display: block;
+  width: 90%;
+}
