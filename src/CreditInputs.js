@@ -39,6 +39,7 @@ const CreditInputs = ({ idx, creditState, handleCreditChange }) => {
           value={creditState[idx].bio}
           onChange={handleCreditChange}
         />
+        <button>Delete Credit</button>
       </div>
     );
 };
