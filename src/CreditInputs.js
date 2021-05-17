@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CreditInputs = ({ idx, creditState, handleCreditChange }) => {
+// Take in the handleDeleteCredit function
+const CreditInputs = ({ idx, creditState, handleCreditChange, handleDeleteCredit }) => {
 
   const creditId = `name-${idx}`;
   const roleId = `role-${idx}`;
@@ -39,7 +40,8 @@ const CreditInputs = ({ idx, creditState, handleCreditChange }) => {
           value={creditState[idx].bio}
           onChange={handleCreditChange}
         />
-        <button>Delete Credit</button>
+        {/* Make Delete Button */}
+        <button data-idx={idx} onClick={handleDeleteCredit}>Delete Credit</button> 
       </div>
     );
 };
@@ -47,5 +49,7 @@ CreditInputs.propTypes = {
   idx: PropTypes.number,
   creditState: PropTypes.array,
   handleCreditChange: PropTypes.func,
+//   Assign handleDeleteCredit a PropType
+  handleDeleteCredit: PropTypes.func
 };
 export default CreditInputs;

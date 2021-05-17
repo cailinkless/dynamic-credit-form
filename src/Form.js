@@ -28,6 +28,14 @@ const Form = () => {
         setCreditState(updatedCredits);
       };
 
+    // Create an array that is all current credits except the one being deleted, set credit state to reflect new list
+    const handleDeleteCredit = (e) => {
+        e.preventDefault();
+        const updatedCredits = [...creditState];
+        updatedCredits.splice(parseInt(e.target.dataset.idx), 1)
+        setCreditState(updatedCredits);
+    }
+
     return (
         <form>            
             <label htmlFor="title">Title</label>   
@@ -41,6 +49,8 @@ const Form = () => {
                             idx={idx}
                             creditState={creditState}
                             handleCreditChange={handleCreditChange}
+                            // Pass each credit the handleDeleteCredit function
+                            handleDeleteCredit={handleDeleteCredit}
                         />
                 ))   
             }
